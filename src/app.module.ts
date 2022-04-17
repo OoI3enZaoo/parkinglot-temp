@@ -5,10 +5,13 @@ import { CarModule } from './car/car.module';
 import { ParkinglotModule } from './parkinglot/parkinglot.module';
 import { TicketModule } from './ticket/ticket.module';
 
+const mongoUri: string =
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/parkinglot';
+
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGODB_URI),
+    MongooseModule.forRoot(mongoUri),
     ParkinglotModule,
     TicketModule,
     CarModule,
