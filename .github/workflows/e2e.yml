@@ -41,4 +41,5 @@ jobs:
       # install dependencies and build the project
       - name: Running e2e testing
         run: |
+          docker exec -it parkinglot_api sh
           npm run test:e2e -- --runInBand --forceExit
